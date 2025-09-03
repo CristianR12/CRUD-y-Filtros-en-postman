@@ -14,11 +14,13 @@ El proyecto se desarorllo en el lenguaje de programación Pyhton, y actualmente 
 Para la instalación o prueba de este proyecto, se puede realizar de dos formas:
 ### 1. Clonando el repositorio de GitHub:
 Una vez se tenga una carpeta abierta en el IDE de preferencia, se puede abrir una terminal donde se ejecuten los siguientes comandos uno por uno:
+```
 git init
 git clone https://github.com/CristianR12/CRUD-y-Filtros-en-postman.git
 cd CRUD-y-Filtros-en-Postman/api_project/api_app
 pip install -r requirements.txt
 py manage.py runserver
+```
 
 ### 2. Ingresando al enlace de documentación generado por Postman
 En la página de documentación, se presiona el botón naranja que aparece en la parte superior derecha de la pantalla, el cual dice "Run in Postman."
@@ -58,15 +60,22 @@ En este archivo se manejan todas las rutas de los endpoints en los cuales se rea
 Este es el archivo que permite ejecutar todas las acciones de la API, ya que es en este archivo donde se declara una clase para cada acción que se realiza, ya sea para personas o para tareas.A estas acciones se les refiere como Vistas.
 #### Vistas para Persona
 **- PersonaList:** Lista todas las personas y permite crear nuevas.
+
 **- CrearPersona:** Registra una nueva persona en la base de datos.
+
 **- ActualizarPersona:** Actualiza los datos de una persona por id (número de documento) e incluye una validación para evitar duplicados en el campo email.
+
 **- EliminarPersona:** Elimina una persona según su id.
+
 **- PersonaByDocumento:** Busca y devuelve una persona a partir de su número de documento.
 
 #### Vistas para Tarea
 Tarea tiene vistas similares para la lectura, creación, modificación y eliminación de datos, que son **TareaList, CrearTarea, ActualizarTarea** y **EliminarTarea**; sin emnargo, para la búsqueda de elementos, se crean clases con diferentes resultados al usar get, que son: 
+
 **- TareaByFecha:** Filtra las tareas por una fecha límite específica para el tipo de dato date (que tiene un formato __YYYY-MM-DD__).
+
 **- TareaByRangoFechas:** Filtra las tareas entre dos fechas dadas, validando el rango.
+
 **- TareaByPersona** Devuelve todas las tareas asignadas a una persona específica.
 
 Cabe mencionar que cada tarea tiene un manejo de errores en caso de no se encuentren registros en las tablas de la base de datos para ambas entidades.
